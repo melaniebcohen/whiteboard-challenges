@@ -39,8 +39,11 @@ function reverseList(ll) {
     current = current.next;
   }
   current.next = null;
-  console.log(newLinkedList);
   return newLinkedList;
 }
 
-reverseList(linkedList);
+module.exports = {
+  'LinkedList': LinkedList,
+  'linkedList': linkedList,
+  'reverseList': reverseList
+}

@@ -1,0 +1,15 @@
+{
+  "name": "13-reverse-linked-list",
+  "version": "1.0.0",
+  "description": "[Whiteboard Challenge](https://github.com/melaniebcohen/13-mongo/blob/master/CHALLENGE.md)   Melanie Cohen",
+  "main": "solution.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.2"
+  }
+}
