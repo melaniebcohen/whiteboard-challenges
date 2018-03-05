@@ -1,0 +1,15 @@
+{
+  "name": "16-enqueue",
+  "version": "1.0.0",
+  "description": "[Whiteboard Challenge](https://github.com/codefellows-seattle-javascript-401d22/16-basic-auth/blob/master/CHALLENGE.md)   Melanie Cohen, David Kosmos, & Alex Bowers",
+  "main": "solution.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.2"
+  }
+}
