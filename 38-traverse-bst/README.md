@@ -1,0 +1,5 @@
+[Whiteboard Challenge](https://github.com/codefellows-seattle-javascript-401d22/38-asset-uploads/blob/master/CHALLENGE.md)  
+Melanie Cohen & Bessie Arino
+
+## Problem Domain
+Create a function that accepts a BST as it's input.  Your function should return an array of all of the values contained in your BST, using whatever traversal method(s) you deem fit.
