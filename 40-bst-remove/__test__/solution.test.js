@@ -9,6 +9,7 @@ describe('BST Remove Node', () => {
   it('should print out the tree using breadth-first', () => {
     const { tree } = require('../solution.js');
     let nodes = [];
+
     printTree(tree, node => { nodes.push(node.val) });
     expect(nodes).toEqual([ 10, 7, 14, 4, 9, 12, 23, 2, 11, 13 ])
   });
@@ -17,6 +18,7 @@ describe('BST Remove Node', () => {
     const { tree } = require('../solution.js');
     let nodes = [];
     let result = removeNode(tree, 9);
+
     printTree(result, node => { nodes.push(node.val) });
     expect(nodes).toEqual([ 10, 7, 14, 4, 12, 23, 2, 11, 13 ])
   });
@@ -25,7 +27,15 @@ describe('BST Remove Node', () => {
     const { tree } = require('../solution.js');
     let nodes = [];
     let result = removeNode(tree, 4);
+
     printTree(result, node => { nodes.push(node.val) });
     expect(nodes).toEqual([10, 7, 14, 2, 9, 12, 23, 11, 13])
+  });
+
+  it.skip('should remove a node and replace it with successor', () => {
+    const { tree } = require('../solution.js');
+    let nodes = [];
+    let result = removeNode(tree, 14);
+    printTree(result, node => { nodes.push(node.val) });
   });
 });

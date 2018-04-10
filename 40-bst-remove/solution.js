@@ -12,6 +12,7 @@ module.exports = exports = {};
   2       11  13
 */
 
+// Binary Search Tree
 exports.tree = {
   val: 10, 
   left: {
@@ -53,6 +54,7 @@ exports.tree = {
   }
 }
 
+// Breadth First Traversal
 exports.printTree = (tree, callback) => {
   let q = [tree];
   let current;
@@ -65,6 +67,7 @@ exports.printTree = (tree, callback) => {
   }
 }
 
+// Helper Function
 const countChildren = tree => {
   return tree.left && tree.right
     ? 2
@@ -73,6 +76,7 @@ const countChildren = tree => {
       : 0
 }
 
+// Remove Node Function
 exports.removeNode = (tree, removeVal) => {
   let found = false;
   if (tree.val === removeVal) console.log('Nope');
@@ -89,24 +93,29 @@ exports.removeNode = (tree, removeVal) => {
 
     if (child) {
       const numChildren = countChildren(tree[child]);
-      if (numChildren === 0) {  // IF V IS A LEAF WITH NO CHILDREN
-        tree[child] = null;        
-      } else if (numChildren === 1) {  // ELSE IF V HAS 1 CHILD, BYPASS V
-        tree[child] = tree[child].left || tree[child].right;
-      } else if (numChildren === 2) { // ELSE REPLACE V WITH SUCCESSOR
-        console.log(tree)
-        console.log(tree[child])
-        // First find the successor (or predecessor) of the this node.
-  
-        // Delete the successor (or predecessor) from the tree.
-        
-        // Replace the node to be deleted with the successor (or predecessor)
 
+      if (numChildren === 0) {
+        return tree[child] = null;        
+        } else if (numChildren === 1) {
+          return tree[child] = tree[child].left || tree[child].right;
+        } else if (numChildren === 2) {
+          return;
+          // let minimumNode = tree[child].right;
+
+          // while (minimumNode) {
+          //   if (minimumNode.left) {
+          //     minimumNode = minimumNode.left;
+          //   } else {
+          //     break;
+          //   }
+          // }
+          // tree[child].val = minimumNode.val;
+          // minimumNode.val = null;
+        }
+      } else {
+        _traverse(tree.left);
+        _traverse(tree.right);
       }
-    } else {
-      _traverse(tree.left);
-      _traverse(tree.right);
-    }
   }
   return tree;
-}
+};
