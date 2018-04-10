@@ -1,0 +1,15 @@
+{
+  "name": "40-bst-remove",
+  "version": "1.0.0",
+  "description": "[Whiteboard Challenge](https://github.com/codefellows-seattle-javascript-401d22/39-putting-it-all-together/blob/master/CHALLENGE.md)   Melanie Cohen & Brian Bixty",
+  "main": "solution.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^22.4.3"
+  }
+}
