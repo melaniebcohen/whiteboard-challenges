@@ -2,13 +2,27 @@
 
 module.exports = exports = {};
 
-let oldTree = { 
+/*
+           10
+         /   \
+        7     14
+      /  \   /  \ 
+    4    9  12  23
+   /       / \
+  2       11  13
+*/
+
+exports.tree = {
   val: 10, 
   left: {
     val: 7,
     left: {
       val: 4,
-      left: null,
+      left: {
+        val: 2,
+        left: null,
+        right: null,
+      },
       right: null,
     },
     right: {
@@ -20,8 +34,12 @@ let oldTree = {
   right: {
     val: 14,
     left: {
-      val: 11,
-      left: null,
+      val: 12,
+      left: {
+        val: 11,
+        left: null,
+        right: null,
+      },
       right: { 
         val: 13, 
         left: null, 
@@ -35,65 +53,19 @@ let oldTree = {
   }
 }
 
-let bst = {
-  value: 15,
-  left: {
-    value: 8,
-    left: {
-      value: 4,
-      left: {
-        value: 0,
-        left: null,
-        right: null,
-      },
-      right: {
-        value: 7,
-        left: {
-          value: 6,
-          left: null,
-          right: null,
-        },
-        right: null,
-      },
-    },
-    right: {
-      value: 12,
-      left: {
-        value: 11,
-        left: {
-          value: 9,
-          left: null,
-          right: {
-            value: 10,
-            left: null,
-            right: null,
-          },
-        },
-        right: null,
-      },
-      right: {
-        value: 14,
-        left: null,
-        right: null,
-      },
-    },
-  },
-  right: {
-    value: 20,
-    left: null,
-    right: {
-      value: 30,
-      left: {
-        value: 25,
-        left: null,
-        right: null,
-      },
-      right: null,
-    },
-  },
-};
+exports.printTree = (tree, callback) => {
+  let q = [tree];
+  let current;
 
-function countChildren(tree) {
+  while (q.length > 0) {
+    current = q.pop();
+    callback(current)
+    if (current.left) q.unshift(current.left)
+    if (current.right) q.unshift(current.right);
+  }
+}
+
+const countChildren = tree => {
   return tree.left && tree.right
     ? 2
     : tree.left || tree.right
@@ -101,15 +73,7 @@ function countChildren(tree) {
       : 0
 }
 
-function fixDoubleChildren(tree) {
-  console.log(tree)
-  // find lowest val...?
-
-
-}
-
-function removeNode(tree, removeVal) {
-  // console.log(tree)
+exports.removeNode = (tree, removeVal) => {
   let found = false;
   if (tree.val === removeVal) console.log('Nope');
 
@@ -125,22 +89,24 @@ function removeNode(tree, removeVal) {
 
     if (child) {
       const numChildren = countChildren(tree[child]);
-      // console.log('tree',tree)
-      // console.log('tree[child]',tree[child])
       if (numChildren === 0) {  // IF V IS A LEAF WITH NO CHILDREN
-        tree[child] = null;
+        tree[child] = null;        
       } else if (numChildren === 1) {  // ELSE IF V HAS 1 CHILD, BYPASS V
         tree[child] = tree[child].left || tree[child].right;
       } else if (numChildren === 2) { // ELSE REPLACE V WITH SUCCESSOR
-        fixDoubleChildren(tree)
+        console.log(tree)
+        console.log(tree[child])
+        // First find the successor (or predecessor) of the this node.
+  
+        // Delete the successor (or predecessor) from the tree.
+        
+        // Replace the node to be deleted with the successor (or predecessor)
+
       }
     } else {
       _traverse(tree.left);
       _traverse(tree.right);
     }
   }
-  console.log(tree)
   return tree;
 }
-
-removeNode(bst, 9)
