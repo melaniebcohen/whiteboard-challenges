@@ -1,0 +1,16 @@
+{
+  "name": "42-bst-nearest",
+  "version": "1.0.0",
+  "description": "[Whiteboard Challenge](https://github.com/codefellows-seattle-javascript-401d22/42-component-frameworks/blob/master/CHALLENGE.md)   Melanie Cohen & Katy Robinson",
+  "main": "solution.js",
+  "dependencies": {
+    "jest": "^22.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
